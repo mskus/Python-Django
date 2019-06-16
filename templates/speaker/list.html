@@ -1,0 +1,104 @@
+{% extends "dashboard.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <h3>Projeler</h3>
+
+    <div>
+
+          <div class="col-md-3" >
+
+            <div class="thumbnail">
+              <img src="{% static "images/default.jpg" %}" width="300">
+              <div class="caption">
+                <h4>{{ object.get_fullname }}</h4>
+
+                <p>
+                    <a href="{{ object.get_absolute_url}}" class="btn btn-primary" role="button">
+                       TTS Tekstil
+                    </a>
+                </p>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+    </div>
+    <div>
+
+          <div class="col-md-3" >
+
+            <div class="thumbnail">
+              <img src="{% static "images/default.jpg" %}" width="300">
+              <div class="caption">
+                <h4>{{ object.get_fullname }}</h4>
+
+                <p>
+                    <a href="{{ object.get_absolute_url}}" class="btn btn-primary" role="button">
+                       Server
+                    </a>
+                </p>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+    </div>
+    <div>
+
+          <div class="col-md-3" >
+
+            <div class="thumbnail">
+              <img src="{% static "images/default.jpg" %}" width="300">
+              <div class="caption">
+                <h4>{{ object.get_fullname }}</h4>
+
+                <p>
+                    <a href="{{ object.get_absolute_url}}" class="btn btn-primary" role="button">
+                       Kelime Avi
+                    </a>
+                </p>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+    </div>
+    <div>
+
+          <div class="col-md-3" >
+
+            <div class="thumbnail">
+              <img src="{% static "images/default.jpg" %}" width="300">
+              <div class="caption">
+                <h4>{{ object.get_fullname }}</h4>
+
+                <p>
+                    <a href="{{ object.get_absolute_url}}" class="btn btn-primary" role="button">
+                      Proje
+                    </a>
+                </p>
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+    </div>
+
+
+    {% include "pagination.html" %}
+
+{% endblock content %}

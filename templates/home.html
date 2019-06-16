@@ -1,0 +1,77 @@
+{% extends "dashboard.html" %}
+
+{% load staticfiles %}
+{% load url from future %}
+
+{% block content %}
+        <div class="jumbotron">
+          <h1>TTS Projesi</h1>
+          <p>
+              Tekstil otomasyonu
+firmalarının üretim, siparis, ihracat ve fason islemlerinin düzenli ve sistemli bir sekilde takibini amaçlayan bir
+sistemdir. Tekstil Otomasyonu fason takibi ürün giris ve çıkısları, müsteri-tedarikçi
+sevkiyat ve siparis takiplerini kolaylıkla takip etmeyi
+saglayarak  Isletmeye rekabet gücü kazandırır.
+</p>
+<p>
+ Planlama, üretimin takip
+edilmesi, fire miktarının takip  edilmesi gibi ihtiyaçlara sahip her isletme kullanabilir.
+    Projemiz ürünlerimiz ve
+hizmetlerimizle müsterilerimize optimize edilmis
+performans, yüksek
+güvenilirlik, yeni ve ileri teknoloji, yeni ürünler ve
+hizmetler sunmayı ve aynı
+zamanda sektör deneyimlerini kullanarak, sorumluluk alıp katkı saglayan, rekabetçi,
+yenilikçi projelerde verimli isbirligi yapan örnek olmayı kendisine hedef edinmektedir.
+               <img src="{% static "images/1.png" %}">
+
+
+          </p>
+          <p>
+              <a class="btn btn-primary btn-lg" href="{% url 'presentation-list' %}" role="button">
+                Tum Projeler
+              </a>
+          </p>
+        </div>
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="panel panel-primary">
+                  <div class="panel-heading" style="background-color: #ff6768">
+                    Son Projeler
+                  </div>
+                    <h1 class="footer-title">&nbsp;TTS Tekstil</h1>
+                  <div class="panel-body">
+                    <ul>
+                        {% for presentation in presentations %}
+                            <li>
+                                <a href="{{ presentation.get_absolute_url }}">
+                                    {{ speaker.get_fullname }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="panel panel-primary">
+                  <div class="panel-heading" style="background-color: #ff6768">
+                    Populer Projeler
+                  </div>
+                    <h3 class="footer-title">&nbsp;TTS Tekstil</h3>
+                    <h3 class="footer-title">&nbsp;Server</h3>
+                    <h3 class="footer-title">&nbsp;Kelime Avi</h3>
+                  <div class="panel-body">
+                        {% for speaker in speakers %}
+                            <li>
+                                <a href="{{ speaker.get_absolute_url }}">
+                                    {{ speaker.get_fullname }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                  </div>
+                </div>
+            </div>
+        </div>
+{% endblock content %}
